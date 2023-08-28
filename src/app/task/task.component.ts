@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Task, TaskStatus } from '../model/task.model';
 
 @Component({
@@ -7,11 +7,8 @@ import { Task, TaskStatus } from '../model/task.model';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent {
-  task!: Task;
+  @Input() task!: Task;
   constructor() {
-    this.task.title = "title";
-    this.task.description = "description";
-    this.task.status = TaskStatus.A_FAIRE;
   }
 
 }

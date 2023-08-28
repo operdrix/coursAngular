@@ -38,22 +38,51 @@
 Node: 18.17.1
 Package Manager: npm 9.8.1</p>
 <h3>Commandes pour initialiser le projet :</h3>
-<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;angular/cli
+<div><pre class="line-numbers"><code class="language-bash">npm install -g &#64;angular/cli
 
 ng new task-manager
 cd task manager
 </code></pre></div><h2>Mise en pratique - Lancement</h2>
 <h3>Lancement</h3>
-<div><pre class="line-numbers"><code class="language-none">ng serve</code></pre></div><h3>build</h3>
-<div><pre class="line-numbers"><code class="language-none">ng build</code></pre></div><p>ng build génère un dossier Dist avec des fichiers statics permettant d&#39;avoir une application légère avec seulement quelques fichiers JS, CSS et HTML</p>
+<div><pre class="line-numbers"><code class="language-bash">ng serve</code></pre></div><h3>build</h3>
+<div><pre class="line-numbers"><code class="language-bash">ng build</code></pre></div><p>ng build génère un dossier Dist avec des fichiers statics permettant d&#39;avoir une application légère avec seulement quelques fichiers JS, CSS et HTML</p>
 <h2>Mise en pratique - Outillage</h2>
-<div><pre class="line-numbers"><code class="language-none">npm i -g yarn
+<div><pre class="line-numbers"><code class="language-bash">npm i -g yarn
 yarn add --dev &#64;compodoc/compodoc
 
 ❯ yarn -v
 1.22.19
 
-&quot;&#64;compodoc/compodoc&quot;: &quot;^1.1.21&quot;</code></pre></div>
+&quot;&#64;compodoc/compodoc&quot;: &quot;^1.1.21&quot;</code></pre></div><h3>Configuration de Compodoc</h3>
+<p>Créer le fichier tsconfig.doc.json:</p>
+<div><pre class="line-numbers"><code class="language-json">{
+&quot;include&quot;: [&quot;src/**/*.ts&quot;],
+&quot;exclude&quot;: [&quot;src/test.ts&quot;, &quot;src/**/*.spec.ts&quot;, &quot;src/app/file-to-exclude.ts&quot;]
+}</code></pre></div><p>Ajouter des scripts dans package.json</p>
+<div><pre class="line-numbers"><code class="language-json">  {
+    &quot;compodoc&quot;: &quot;npx compodoc -p tsconfig.doc.json&quot;,
+    &quot;compodoc:serve&quot;: &quot;compodoc -s&quot;
+  }</code></pre></div><p>Build de la documentation</p>
+<div><pre class="line-numbers"><code class="language-bash">npm run compodoc</code></pre></div><p>Affichage de la config</p>
+<div><pre class="line-numbers"><code class="language-bash">npm run compodoc:serve</code></pre></div><p>Aller sur <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
+<h2>Mise en pratique - Composant</h2>
+<h2>Mise en pratique - Smart &amp; Dumb pattern</h2>
+<div><pre class="line-numbers"><code class="language-shell">ng generate component main-task</code></pre></div><p>main-task.component.ts</p>
+<div><pre class="line-numbers"><code class="language-ts">import { Component } from &#39;&#64;angular/core&#39;;
+import { Task, TaskStatus } from &#39;../model/task.model&#39;;
+
+&#64;Component({
+  selector: &#39;app-main-task&#39;,
+  templateUrl: &#39;./main-task.component.html&#39;,
+  styleUrls: [&#39;./main-task.component.scss&#39;]
+})
+export class MainTaskComponent {
+  task!: Task;
+  constructor() {
+    this.task = new Task(&quot;title&quot;, &quot;description&quot;, TaskStatus.A_FAIRE);
+  }
+}</code></pre></div><p>main-task.component.html</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;app-task [task]=&quot;task&quot;&gt;&lt;/app-task&gt;</code></pre></div>
 
 
 

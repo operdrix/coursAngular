@@ -1,5 +1,5 @@
 import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
-import { TaskStatus } from './tasks/model/Task.model';
+import { TaskStatus } from './model/Task.model';
 import { style } from '@angular/animations';
 
 @Directive({

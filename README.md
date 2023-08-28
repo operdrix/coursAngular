@@ -30,3 +30,14 @@ ng build
 ```
 ng build génère un dossier Dist avec des fichiers statics permettant d'avoir une application légère avec seulement quelques fichiers JS, CSS et HTML
 
+## Mise en pratique - Outillage
+
+```
+npm i -g yarn
+yarn add --dev @compodoc/compodoc
+
+❯ yarn -v
+1.22.19
+
+"@compodoc/compodoc": "^1.1.21"
+````

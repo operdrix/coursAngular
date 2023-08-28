@@ -262,7 +262,7 @@ export class TaskListComponent {
 <script>
         var COMPONENT_TEMPLATE = '<div><div>  <ng-container *ngFor="let task of tasks.tasks">    <app-task [task]="task"></app-task>  </ng-container></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'}];
-    var DIRECTIVES = [];
+    var DIRECTIVES = [{'name': 'StatusColorDirective', 'selector': '[appStatusColor]'}];
     var ACTUAL_COMPONENT = {'name': 'TaskListComponent'};
 </script>
 <script src="../js/tree.js"></script>

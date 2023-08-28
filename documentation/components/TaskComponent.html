@@ -204,7 +204,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
-import { Task, TaskStatus } from &#x27;../model/Task.model&#x27;;
+import { Task } from &#x27;../model/Task.model&#x27;;
 
 @Component({
   selector: &#x27;app-task&#x27;,
@@ -223,9 +223,10 @@ export class TaskComponent {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;task&quot;&gt;
-  &lt;h2&gt;{{ task.title }}&lt;/h2&gt;
+  &lt;h2 [appStatusColor]&#x3D;&quot;task.status&quot;&gt;{{ task.title }}&lt;/h2&gt;
   &lt;p&gt;{{ task.description }}&lt;/p&gt;
   &lt;p&gt;{{ task.status }}&lt;/p&gt;
+  &lt;p&gt;{{ task.createdAt | dateFormat }}&lt;/p&gt;
 &lt;/div&gt;</code></pre>
     </div>
 
@@ -261,9 +262,9 @@ export class TaskComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="task">  <h2>{{ task.title }}</h2>  <p>{{ task.description }}</p>  <p>{{ task.status }}</p></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="task">  <h2 [appStatusColor]="task.status">{{ task.title }}</h2>  <p>{{ task.description }}</p>  <p>{{ task.status }}</p>  <p>{{ task.createdAt | dateFormat }}</p></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'}];
-    var DIRECTIVES = [];
+    var DIRECTIVES = [{'name': 'StatusColorDirective', 'selector': '[appStatusColor]'}];
     var ACTUAL_COMPONENT = {'name': 'TaskComponent'};
 </script>
 <script src="../js/tree.js"></script>

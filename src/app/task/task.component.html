@@ -2,4 +2,5 @@
   <h2 [appStatusColor]="task.status">{{ task.title }}</h2>
   <p>{{ task.description }}</p>
   <p>{{ task.status }}</p>
+  <p>{{ task.createdAt | dateFormat }}</p>
 </div>

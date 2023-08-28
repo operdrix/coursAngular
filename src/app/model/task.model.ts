@@ -3,7 +3,9 @@ export class Task {
     public title: string,
     public description: string,
     public status: TaskStatus,
-  ) { }
+    public createdAt: Date,
+  ) {
+  }
 }
 
 export enum TaskStatus {

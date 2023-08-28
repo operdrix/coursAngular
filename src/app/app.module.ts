@@ -7,6 +7,7 @@ import { TaskComponent } from './task/task.component';
 import { MainTaskComponent } from './main-task/main-task.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { StatusColorDirective } from './status-color.directive';
+import { DateFormatPipe } from './date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StatusColorDirective } from './status-color.directive';
     TaskComponent,
     MainTaskComponent,
     TaskListComponent,
-    StatusColorDirective
+    StatusColorDirective,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,

@@ -9,17 +9,19 @@ import { TaskList } from '../model/TaskList.model';
 })
 export class MainTaskComponent {
   tasks!: TaskList;
+
   constructor() {
+    const newDate = new Date();
     this.tasks = new TaskList(
       [
         {
-          title: "tâche 1", description: "description tâche 1", status: TaskStatus.A_FAIRE
+          title: "tâche 1", description: "description tâche 1", status: TaskStatus.A_FAIRE, createdAt: newDate
         },
         {
-          title: "tâche 2", description: "description tâche 2", status: TaskStatus.A_FAIRE
+          title: "tâche 2", description: "description tâche 2", status: TaskStatus.A_FAIRE, createdAt: newDate
         },
         {
-          title: "tâche 3", description: "description tâche 3", status: TaskStatus.EN_COURS
+          title: "tâche 3", description: "description tâche 3", status: TaskStatus.EN_COURS, createdAt: newDate
         }
       ]
     );

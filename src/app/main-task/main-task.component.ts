@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Task, TaskStatus } from '../model/Task.model';
+import { TaskStatus } from '../model/Task.model';
 import { TaskList } from '../model/TaskList.model';
 
 @Component({

@@ -8,7 +8,7 @@ import { Task, TaskStatus } from '../model/Task.model';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent {
-  @Input() tasks!: TaskList;
+  @Input() tasksList!: TaskList;
   constructor() {
   }
 }

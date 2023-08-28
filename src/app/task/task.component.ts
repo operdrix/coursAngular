@@ -9,7 +9,6 @@ import { Task } from '../model/Task.model';
 export class TaskComponent {
   @Input() task!: Task;
   constructor() {
-    console.log(this.task);
   }
 
 }

@@ -204,7 +204,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
-import { Task, TaskStatus } from &#x27;../model/task.model&#x27;;
+import { Task, TaskStatus } from &#x27;../model/Task.model&#x27;;
 
 @Component({
   selector: &#x27;app-task&#x27;,
@@ -214,6 +214,7 @@ import { Task, TaskStatus } from &#x27;../model/task.model&#x27;;
 export class TaskComponent {
   @Input() task!: Task;
   constructor() {
+    console.log(this.task);
   }
 
 }
@@ -232,40 +233,7 @@ export class TaskComponent {
                 <p class="comment">
                     <code>./task.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">.task {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-bottom: 1px solid #ccc;
-
-  &amp;:last-child {
-    border-bottom: none;
-  }
-
-  .task__title {
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #333;
-  }
-
-  .task__actions {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    .task__action {
-      margin-left: 1rem;
-      cursor: pointer;
-
-      &amp;:first-child {
-        margin-left: 0;
-      }
-    }
-  }
-}</code></pre>
+                <pre class="line-numbers"><code class="language-scss">.task {}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -294,7 +262,7 @@ export class TaskComponent {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><div class="task">  <h2>{{ task.title }}</h2>  <p>{{ task.description }}</p>  <p>{{ task.status }}</p></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'}];
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TaskComponent'};
 </script>

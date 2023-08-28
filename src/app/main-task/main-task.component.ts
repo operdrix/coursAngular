@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Task, TaskStatus } from '../model/task.model';
+import { Task, TaskStatus } from '../model/Task.model';
+import { TaskList } from '../model/TaskList.model';
 
 @Component({
   selector: 'app-main-task',
@@ -7,8 +8,20 @@ import { Task, TaskStatus } from '../model/task.model';
   styleUrls: ['./main-task.component.scss']
 })
 export class MainTaskComponent {
-  task!: Task;
+  tasks!: TaskList;
   constructor() {
-    this.task = new Task("title", "description", TaskStatus.A_FAIRE);
+    this.tasks = new TaskList(
+      [
+        {
+          title: "tâche 1", description: "description tâche 1", status: TaskStatus.A_FAIRE
+        },
+        {
+          title: "tâche 2", description: "description tâche 2", status: TaskStatus.A_FAIRE
+        },
+        {
+          title: "tâche 3", description: "description tâche 3", status: TaskStatus.EN_COURS
+        }
+      ]
+    );
   }
 }

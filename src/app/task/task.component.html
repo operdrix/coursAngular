@@ -1,5 +1,5 @@
 <div class="task">
-  <h2>{{ task.title }}</h2>
+  <h2 [appStatusColor]="task.status">{{ task.title }}</h2>
   <p>{{ task.description }}</p>
   <p>{{ task.status }}</p>
 </div>

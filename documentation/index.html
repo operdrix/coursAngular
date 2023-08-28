@@ -66,7 +66,39 @@ yarn add --dev &#64;compodoc/compodoc
 <div><pre class="line-numbers"><code class="language-bash">npm run compodoc</code></pre></div><p>Affichage de la config</p>
 <div><pre class="line-numbers"><code class="language-bash">npm run compodoc:serve</code></pre></div><p>Aller sur <a href="http://127.0.0.1:8080">http://127.0.0.1:8080</a></p>
 <h2>Mise en pratique - Composant</h2>
-<h2>Mise en pratique - Smart &amp; Dumb pattern</h2>
+<p>model/task.model.ts</p>
+<div><pre class="line-numbers"><code class="language-js">export class Task {
+  constructor(
+    public title: string,
+    public description: string,
+    public status: TaskStatus,
+  ) { }
+}
+
+export enum TaskStatus {
+  A_FAIRE = &#39;A_FAIRE&#39;,
+  EN_COURS = &#39;EN_COURS&#39;,
+  TERMINEE = &#39;TERMINEE&#39;,
+}</code></pre></div><div><pre class="line-numbers"><code class="language-shell">ng generate component task</code></pre></div><p>task.component.ts</p>
+<div><pre class="line-numbers"><code class="language-js">import { Component, Input } from &#39;&#64;angular/core&#39;;
+import { Task, TaskStatus } from &#39;../model/task.model&#39;;
+
+&#64;Component({
+  selector: &#39;app-task&#39;,
+  templateUrl: &#39;./task.component.html&#39;,
+  styleUrls: [&#39;./task.component.scss&#39;]
+})
+export class TaskComponent {
+  &#64;Input() task!: Task;
+  constructor() {
+  }
+
+}</code></pre></div><p>task.component.html</p>
+<div><pre class="line-numbers"><code class="language-html">&lt;div class=&quot;task&quot;&gt;
+  &lt;h2&gt;{{ task.title }}&lt;/h2&gt;
+  &lt;p&gt;{{ task.description }}&lt;/p&gt;
+  &lt;p&gt;{{ task.status }}&lt;/p&gt;
+&lt;/div&gt;</code></pre></div><h2>Mise en pratique - Smart &amp; Dumb pattern</h2>
 <div><pre class="line-numbers"><code class="language-shell">ng generate component main-task</code></pre></div><p>main-task.component.ts</p>
 <div><pre class="line-numbers"><code class="language-ts">import { Component } from &#39;&#64;angular/core&#39;;
 import { Task, TaskStatus } from &#39;../model/task.model&#39;;

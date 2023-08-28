@@ -59,13 +59,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/AppModule.html" data-type="entity-link" >AppModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-bs-toggle="collapse" ${ isNormalMode ?
-                                            'data-bs-target="#components-links-module-AppModule-b340981d0f23d206341c150885aafb371f14a67f717208fa2bfa4d0bcdc099f3941f778da17c1a55c1e7e8875da6e2ad00b4ae0219dd03e5d1b600f52edd4e92"' : 'data-bs-target="#xs-components-links-module-AppModule-b340981d0f23d206341c150885aafb371f14a67f717208fa2bfa4d0bcdc099f3941f778da17c1a55c1e7e8875da6e2ad00b4ae0219dd03e5d1b600f52edd4e92"' }>
+                                            'data-bs-target="#components-links-module-AppModule-a6f65eabf57ee08b347f0827d6a281f0edb43ee738859a3116ea5c13d48dfdbc4dec6c09820c5bd62365491033e0c765e32eee6f2c31580db4ff20e920e42c59"' : 'data-bs-target="#xs-components-links-module-AppModule-a6f65eabf57ee08b347f0827d6a281f0edb43ee738859a3116ea5c13d48dfdbc4dec6c09820c5bd62365491033e0c765e32eee6f2c31580db4ff20e920e42c59"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-b340981d0f23d206341c150885aafb371f14a67f717208fa2bfa4d0bcdc099f3941f778da17c1a55c1e7e8875da6e2ad00b4ae0219dd03e5d1b600f52edd4e92"' :
-                                            'id="xs-components-links-module-AppModule-b340981d0f23d206341c150885aafb371f14a67f717208fa2bfa4d0bcdc099f3941f778da17c1a55c1e7e8875da6e2ad00b4ae0219dd03e5d1b600f52edd4e92"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-AppModule-a6f65eabf57ee08b347f0827d6a281f0edb43ee738859a3116ea5c13d48dfdbc4dec6c09820c5bd62365491033e0c765e32eee6f2c31580db4ff20e920e42c59"' :
+                                            'id="xs-components-links-module-AppModule-a6f65eabf57ee08b347f0827d6a281f0edb43ee738859a3116ea5c13d48dfdbc4dec6c09820c5bd62365491033e0c765e32eee6f2c31580db4ff20e920e42c59"' }>
                                             <li class="link">
                                                 <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >AppComponent</a>
                                             </li>
@@ -74,6 +74,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                             </li>
                                             <li class="link">
                                                 <a href="components/TaskComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TaskComponent</a>
+                                            </li>
+                                            <li class="link">
+                                                <a href="components/TaskListComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules" >TaskListComponent</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -93,6 +96,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                         <ul class="links collapse " ${ isNormalMode ? 'id="classes-links"' : 'id="xs-classes-links"' }>
                             <li class="link">
                                 <a href="classes/Task.html" data-type="entity-link" >Task</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/TaskList.html" data-type="entity-link" >TaskList</a>
                             </li>
                         </ul>
                     </li>

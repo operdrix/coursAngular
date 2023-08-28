@@ -65,3 +65,6 @@ Affichage de la config
 ```bash
 npm run compodoc:serve
 ```
+Aller sur http://127.0.0.1:8080
+
+## Mise en pratique - Composant

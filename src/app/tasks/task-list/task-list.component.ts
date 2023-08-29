@@ -8,6 +8,4 @@ import { TaskList } from '../model/TaskList.model';
 })
 export class TaskListComponent {
   @Input() tasksList!: TaskList;
-  constructor() {
-  }
 }

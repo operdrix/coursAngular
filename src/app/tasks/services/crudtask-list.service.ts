@@ -1,15 +1,16 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Output} from '@angular/core';
 import {Task, TaskStatus} from "../model/Task.model";
 import {v4 as uuidv4} from 'uuid'
 import {TaskList} from "../model/TaskList.model";
 import {CRUDTaskListInterface} from "./crudtask-list.interface";
+import {Observable, of} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CRUDTaskListService implements CRUDTaskListInterface{
 
-  private tasks:Task[] =
+  protected tasks:Task[] =
     [
       {
         id: uuidv4(),
@@ -34,25 +35,21 @@ export class CRUDTaskListService implements CRUDTaskListInterface{
       }
     ]
 
-  public getTaskList(): TaskList {
-    return new TaskList(this.tasks);
+  public getTaskList(): Observable<TaskList> {
+    return of(new TaskList(this.tasks));
   }
-  public getTasks(): Task[] {
-    return this.tasks;
+  public getTasks(): Observable<Task[]> {
+    return of(this.tasks);
   }
-
-  public getTask(id:string): Task | undefined {
-    return this.tasks.find(task => task.id === id);
+  public getTask(id:string): Observable<Task | undefined> {
+    return of(this.tasks.find(task => task.id === id))
   }
-
   public addTask(task: Task): void {
     this.tasks.push(task);
   }
-
   public deleteTask(task: Task): void {
     this.tasks.splice(this.tasks.indexOf(task), 1);
   }
-
   public updateTask(task: Task): void {
     this.tasks[this.tasks.indexOf(task)] = task;
   }

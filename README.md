@@ -142,3 +142,8 @@ main-task.component.html
 ```html
 <app-task [task]="task"></app-task>
 ```
+
+## Mise en pratique - Observables
+Imaginons que les données délivrées par les services soient issues de requêtesHTTP. 
+Décrivez les opérations à effectuer pour mettre en place le moduleHttpClient ainsi que la requête à 
+effectuer sur une url "https://domain/data" avec un paramètre de requête "?param=test".

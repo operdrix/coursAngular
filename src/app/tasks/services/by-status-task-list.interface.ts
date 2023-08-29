@@ -1,4 +1,4 @@
-import {Task, TaskStatus} from "./model/Task.model";
+import {Task, TaskStatus} from "../model/Task.model";
 import {CRUDTaskListInterface} from "./crudtask-list.interface";
 
 

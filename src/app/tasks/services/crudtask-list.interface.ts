@@ -1,5 +1,5 @@
-import {Task} from "./model/Task.model";
-import {TaskList} from "./model/TaskList.model";
+import {Task} from "../model/Task.model";
+import {TaskList} from "../model/TaskList.model";
 
 export interface CRUDTaskListInterface {
 

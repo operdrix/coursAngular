@@ -6,7 +6,7 @@ import {TaskListComponent} from "./task-list/task-list.component";
 import {StatusColorDirective} from "./status-color.directive";
 import {DateFormatPipe} from "../date-format.pipe";
 import {TasksRoutingModule} from "./tasks-routing.module";
-import {CRUDTaskListService} from "./crudtask-list.service";
+import {CRUDTaskListService} from "./services/crudtask-list.service";
 
 @NgModule({
   declarations: [

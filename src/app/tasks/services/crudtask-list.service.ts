@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {Task, TaskStatus} from "./model/Task.model";
+import {Task, TaskStatus} from "../model/Task.model";
 import {v4 as uuidv4} from 'uuid'
-import {TaskList} from "./model/TaskList.model";
+import {TaskList} from "../model/TaskList.model";
 import {CRUDTaskListInterface} from "./crudtask-list.interface";
 
 @Injectable({

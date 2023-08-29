@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import {Task, TaskStatus} from '../model/Task.model';
 import { TaskList } from '../model/TaskList.model';
-import {CRUDTaskListService} from "../crudtask-list.service";
-import {ByStatusTaskListService} from "../by-status-task-list.service";
+import {TaskFacadeService} from "../services/task-facade.service";
 
 @Component({
   selector: 'app-main-task',
@@ -14,8 +13,8 @@ export class MainTaskComponent {
   tasks!: TaskList;
   archivedTasks!: Task[]
 
-  constructor( private tls: CRUDTaskListService, private byStatus: ByStatusTaskListService ) {
-    this.tasks = tls.getTaskList()
-    this.archivedTasks = byStatus.getTasksByStatus(TaskStatus.TERMINEE)
+  constructor( private taskService: TaskFacadeService ) {
+    this.tasks = taskService.getTaskList()
+    this.archivedTasks = taskService.getTasksByStatus(TaskStatus.TERMINEE)
   }
 }

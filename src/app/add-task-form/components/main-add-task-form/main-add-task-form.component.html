@@ -1,0 +1,5 @@
+<h1>Ajouter une tâche</h1>
+<button type="button" class="btn btn-primary" [routerLink]="['/display']">Retour à la liste des tâches</button>
+<app-add-task-form (handleSubmit)="handleSubmit($event)">
+</app-add-task-form>
+

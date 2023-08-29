@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <p>
+    <label>Titre :</label>
+    <input type="text" formControlName="title">
+  </p>
+  <p>
+    <label>Description :</label>
+    <input type="text" formControlName="description">
+  </p>
+  <p>
+    <label>Status :</label>
+    <select formControlName="status">
+      <option *ngFor="let status of statuses" value="{{ status }}" >{{ status }}</option>
+    </select>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!form.valid">Ajouter la tâche</button>
+  </p>
+</form>

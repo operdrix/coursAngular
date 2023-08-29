@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {Task} from "./tasks/model/Task.model";
 import {TasksModule} from "./tasks/tasks.module";
+import { MainAddTaskFormComponent } from './add-task-form/components/main-add-task-form/main-add-task-form.component';
+import {AddTaskFormModule} from "./add-task-form/add-task-form.module";
 
 @NgModule({
   declarations: [
@@ -13,9 +15,12 @@ import {TasksModule} from "./tasks/tasks.module";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    TasksModule
+    TasksModule,
+    AddTaskFormModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

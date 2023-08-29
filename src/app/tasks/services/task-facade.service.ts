@@ -4,6 +4,7 @@ import {CRUDTaskListService} from "./crudtask-list.service";
 import {Task, TaskStatus} from "../model/Task.model";
 import {TaskList} from "../model/TaskList.model";
 import {Observable} from "rxjs";
+import {v4 as uuidv4} from "uuid";
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class TaskFacadeService {
     return this.taskListService.getTask(id);
   }
   public addTask(task: Task): void {
-    this.taskListService.addTask(task);
+    this.taskListService.addTask({...task, id: uuidv4(), createdAt: new Date()});
   }
   public deleteTask(task: Task): void {
     this.taskListService.deleteTask(task);

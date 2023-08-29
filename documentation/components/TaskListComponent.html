@@ -69,7 +69,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/task-list/task-list.component.ts</code>
+    <code>src/app/tasks/components/task-list/task-list.component.ts</code>
 </p>
 
 
@@ -138,7 +138,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#tasks" >tasks</a>
+                                <a href="#tasksList" >tasksList</a>
                             </li>
                         </ul>
                     </td>
@@ -151,24 +151,6 @@
     </table>
 </section>
 
-    <section data-compodoc="block-constructor">
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor()</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/task-list/task-list.component.ts:11</a></div>
-                            </td>
-                        </tr>
-
-            </tbody>
-        </table>
-</section>
 
     <section data-compodoc="block-inputs">
     <h3 id="inputs">Inputs</h3>
@@ -176,8 +158,8 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="tasks"></a>
-                        <b>tasks</b>
+                        <a name="tasksList"></a>
+                        <b>tasksList</b>
                     </td>
                 </tr>
                 <tr>
@@ -188,7 +170,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/task-list/task-list.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/tasks/components/task-list/task-list.component.ts:10</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -204,8 +186,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
-import { TaskList } from &#x27;../model/TaskList.model&#x27;;
-import { Task, TaskStatus } from &#x27;../model/Task.model&#x27;;
+import { TaskList } from &#x27;../../model/TaskList.model&#x27;;
 
 @Component({
   selector: &#x27;app-task-list&#x27;,
@@ -213,26 +194,32 @@ import { Task, TaskStatus } from &#x27;../model/Task.model&#x27;;
   styleUrls: [&#x27;./task-list.component.scss&#x27;]
 })
 export class TaskListComponent {
-  @Input() tasks!: TaskList;
-  constructor() {
-  }
+  @Input() tasksList!: TaskList;
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div&gt;
-  &lt;ng-container *ngFor&#x3D;&quot;let task of tasks.tasks&quot;&gt;
+  &lt;div class&#x3D;&quot;taskList&quot; *ngFor&#x3D;&quot;let task of tasksList.tasks&quot;&gt;
     &lt;app-task [task]&#x3D;&quot;task&quot;&gt;&lt;/app-task&gt;
-  &lt;/ng-container&gt;
-&lt;/div&gt;</code></pre>
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./task-list.component.scss</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss"></code></pre>
+                <pre class="line-numbers"><code class="language-scss">.taskList{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 70%;
+  margin: 0 auto;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -260,8 +247,8 @@ export class TaskListComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div>  <ng-container *ngFor="let task of tasks.tasks">    <app-task [task]="task"></app-task>  </ng-container></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'}];
+        var COMPONENT_TEMPLATE = '<div><div>  <div class="taskList" *ngFor="let task of tasksList.tasks">    <app-task [task]="task"></app-task>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AddTaskFormComponent', 'selector': 'app-add-task-form'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'MainAddTaskFormComponent', 'selector': 'app-main-add-task-form'},{'name': 'MainTaskComponent', 'selector': 'app-main-task'},{'name': 'TaskComponent', 'selector': 'app-task'},{'name': 'TaskListComponent', 'selector': 'app-task-list'}];
     var DIRECTIVES = [{'name': 'StatusColorDirective', 'selector': '[appStatusColor]'}];
     var ACTUAL_COMPONENT = {'name': 'TaskListComponent'};
 </script>

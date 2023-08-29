@@ -18,7 +18,8 @@ import {CRUDTaskListService} from "./services/crudtask-list.service";
   ],
   imports: [
     CommonModule,
-    TasksRoutingModule
+    TasksRoutingModule,
+
   ],
   providers: [
     CRUDTaskListService

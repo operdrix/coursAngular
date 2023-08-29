@@ -10,7 +10,7 @@ export class Task {
 }
 
 export enum TaskStatus {
-  A_FAIRE = 'A_FAIRE',
-  EN_COURS = 'EN_COURS',
-  TERMINEE = 'TERMINEE',
+  A_FAIRE = 'A faire',
+  EN_COURS = 'En cours',
+  TERMINEE = 'Terminée',
 }

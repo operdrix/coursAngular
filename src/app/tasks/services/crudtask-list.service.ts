@@ -22,14 +22,14 @@ export class CRUDTaskListService implements CRUDTaskListInterface{
         id: uuidv4(),
         title: "tâche 2",
         description: "description tâche 2",
-        status: TaskStatus.A_FAIRE,
+        status: TaskStatus.EN_COURS,
         createdAt: new Date()
       },
       {
         id: uuidv4(),
         title: "tâche 3",
         description: "description tâche 3",
-        status: TaskStatus.EN_COURS,
+        status: TaskStatus.TERMINEE,
         createdAt: new Date()
       }
     ]

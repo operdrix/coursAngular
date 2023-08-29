@@ -1,6 +1,18 @@
-<div class="task">
-  <h2 [appStatusColor]="task.status">{{ task.title }}</h2>
-  <p>{{ task.description }}</p>
-  <p>{{ task.status }}</p>
-  <p>{{ task.createdAt | dateFormat }}</p>
+<div class="task card">
+  <div class="container card-header">
+    <div class="row align-items-start">
+      <div class="col">
+        {{ task.createdAt | dateFormat }}
+      </div>
+      <div class="col text-end" [appStatusColor]="task.status">
+        {{ task.status }}
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ task.title }}</h5>
+    <p class="card-text">{{ task.description }}</p>
+    <p class="card-text">{{ task.createdAt | dateFormat }}</p>
+    <a href="#" class="btn btn-primary">Edit</a>
+  </div>
 </div>
